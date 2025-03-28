@@ -1,0 +1,55 @@
+# Build artifacts
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+*.exe
+
+# CMake and Make build directories
+CMakeFiles/
+CMakeCache.txt
+Makefile
+CMakeLists.txt.user
+cmake_install.cmake
+
+# Visual Studio files
+*.vcxproj*
+*.sln
+*.aps
+*.ncb
+*.sdf
+*.suo
+*.mode1v3
+*.mode2v3
+*.VC.db
+*.ipch
+
+# Code::Blocks files
+*.layout
+*.cbp
+*.depend
+*.layout
+
+# CLion and JetBrains files
+.idea/
+*.iml
+*.ipr
+*.iws
+cmake-build-debug/
+cmake-build-release/
+
+# Debugging files
+*.log
+*.dmp
+
+# Editor/OS files
+.DS_Store
+Thumbs.db
+
+# GLFW, GLEW, and other external dependencies
+external/
+deps/
+vendor/
