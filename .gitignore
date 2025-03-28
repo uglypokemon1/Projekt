@@ -1,55 +1,33 @@
-# Build artifacts
-*.o
-*.obj
-*.so
-*.dll
-*.dylib
-*.a
-*.lib
-*.exe
 
-# CMake and Make build directories
-CMakeFiles/
-CMakeCache.txt
-Makefile
-CMakeLists.txt.user
-cmake_install.cmake
-
-# Visual Studio files
-*.vcxproj*
-*.sln
-*.aps
-*.ncb
-*.sdf
-*.suo
-*.mode1v3
-*.mode2v3
-*.VC.db
-*.ipch
-
-# Code::Blocks files
-*.layout
-*.cbp
-*.depend
-*.layout
-
-# CLion and JetBrains files
-.idea/
-*.iml
-*.ipr
-*.iws
-cmake-build-debug/
-cmake-build-release/
-
-# Debugging files
-*.log
-*.dmp
-
-# Editor/OS files
-.DS_Store
+#Ignore thumbnails created by Windows
 Thumbs.db
-
-# GLFW, GLEW, and other external dependencies
-external/
-deps/
-vendor/
+#Ignore files built by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+.vs/
+.idea/
+#Nuget packages folder
+packages/
