@@ -21,7 +21,7 @@ namespace Szeminarium1
         void main()
         {
 			outCol = vCol;
-            gl_Position = vec4(vPos.x, vPos.y, vPos.z, 1.0);
+            gl_Position = vec4(vPos.x, vPos.y, vPos.z, 2.0);
         }
         ";
 
@@ -108,22 +108,45 @@ namespace Szeminarium1
             Gl.BindVertexArray(vao);
 
             float[] vertexArray = new float[] {
-                -0.5f, -0.5f, 0.0f,
-                +0.5f, -0.5f, 0.0f,
-                 0.0f, +0.5f, 0.0f,
-                 1f, 1f, 0f
+                0f, 0f, 0.0f,
+                -0.66f, 0.33f, 0.0f,
+                -0.66f, 1.33f, 0.0f,
+                 0f, 1f, 0f,
+                 0f, 0f, 0.0f,
+                 0f, 1f, 0f,
+                 0.66f, 1.33f, 0.0f,
+                 0.66f, 0.33f, 0.0f,
+                 0f, 1f, 0.0f,
+                 0.66f, 1.33f, 0.0f,
+                 0, 1.66f, 0.0f,
+                 -0.66f, 1.33f, 0.0f
+
+
             };
 
             float[] colorArray = new float[] {
                 1.0f, 0.0f, 0.0f, 1.0f,
-                0.0f, 1.0f, 0.0f, 1.0f,
-                0.0f, 0.0f, 1.0f, 1.0f,
                 1.0f, 0.0f, 0.0f, 1.0f,
+                1.0f, 0.0f, 0.0f, 1.0f,
+                1.0f, 0.0f, 0.0f, 1.0f,
+                0.0f, 1.0f, 0.0f, 1.0f,
+                0.0f, 1.0f, 0.0f, 1.0f,
+                0.0f, 1.0f, 0.0f, 1.0f,
+                0.0f, 1.0f, 0.0f, 1.0f,
+                1.0f, 0.0f, 1.0f, 0.0f,
+                1.0f, 0.0f, 1.0f, 0.0f,
+                1.0f, 0.0f, 1.0f, 0.0f,
+                1.0f, 0.0f, 1.0f, 0.0f
+
             };
 
             uint[] indexArray = new uint[] { 
                 0, 1, 2,
-                2, 1, 3
+                2, 3, 0,
+                4, 5 ,6,
+                6, 7, 4,
+                8, 9, 10,
+                10, 11, 8
             };
 
             uint vertices = Gl.GenBuffer();
