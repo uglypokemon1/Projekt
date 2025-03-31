@@ -21,7 +21,7 @@ namespace Szeminarium1
         void main()
         {
 			outCol = vCol;
-            gl_Position = vec4(vPos.y, vPos.y, vPos.y, 1.0); //atirtam az x es z, y-ra
+            gl_Position = vec4(vPos.x, vPos.y, vPos.z, 1.0);
         }
         ";
 
