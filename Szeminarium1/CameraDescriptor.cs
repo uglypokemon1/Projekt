@@ -7,7 +7,7 @@ namespace Szeminarium
     {
         public double DistanceToOrigin { get; private set; } = 3;
 
-        public double AngleToZYPlane { get; private set; } = Math.PI ;
+        public double AngleToZYPlane { get; private set; } = 0 ;
 
         public double AngleToZXPlane { get; private set; } = -Math.PI/ 4f;
 

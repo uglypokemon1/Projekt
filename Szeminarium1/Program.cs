@@ -13,15 +13,7 @@ namespace GrafikaSzeminarium
 
         private static GL Gl;
 
-        private static ModelObjectDescriptor cube1;
-        private static ModelObjectDescriptor cube2;
-        private static ModelObjectDescriptor cube3;
-        private static ModelObjectDescriptor cube4;
-        private static ModelObjectDescriptor cube5;
-        private static ModelObjectDescriptor cube6;
-        private static ModelObjectDescriptor cube7;
-        private static ModelObjectDescriptor cube8;
-        private static ModelObjectDescriptor cube9;
+        private static ModelObjectDescriptor[] cube = new ModelObjectDescriptor[27];
 
         private static CameraDescriptor camera = new CameraDescriptor();
 
@@ -87,15 +79,14 @@ namespace GrafikaSzeminarium
         private static void GraphicWindow_Load()
         {
             Gl = graphicWindow.CreateOpenGL();
-            float[] cyan = { 0.0f, 1.0f, 1.0f, 1.0f }; 
+            float[] cyan = { 0.0f, 1.0f, 1.0f, 1.0f };
             float[] yellow = { 1.0f, 0.835f, 0.0f, 1.0f };
             float[] blue = { 0.0f, 0.274f, 0.678f, 1.0f };
             float[] green = { 0.0f, 0.608f, 0.282f, 1.0f };
             float[] red = { 0.717f, 0.070f, 0.203f, 1.0f };
             float[] orange = { 1.0f, 0.345f, 0.0f, 1.0f };
             float[] black = { 0.0f, 0.0f, 0.0f, 1.0f };
-            cube2 = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl,cyan,yellow,red, green, orange, black);
-
+            CreateCubes(cyan, yellow, blue, green, red, orange, black);
 
             Gl.ClearColor(System.Drawing.Color.White);
 
@@ -141,6 +132,50 @@ namespace GrafikaSzeminarium
                 Console.WriteLine($"Error linking shader {Gl.GetProgramInfoLog(program)}");
             }
         }
+
+        private static void CreateCubes(float[] cyan, float[] yellow, float[] blue, float[] green, float[] red, float[] orange, float[] black)
+        {
+            cube[0] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, black, black, black);
+            cube[1] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, red, black, black);
+            cube[2] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, red, black, blue);
+            cube[3] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, green, red, black, black);
+            cube[4] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, green, black, black, black);
+            cube[5] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, cyan, green, black, black, black);
+            cube[6] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, cyan, black, black, black, black);
+            cube[7] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, cyan, black, black, black, blue);
+            cube[8] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, black, black, blue);
+            // 1 oldal front cyan szinu
+
+            cube[9] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, black, blue);
+            cube[10] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, yellow, blue);
+            cube[11] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, black, yellow, blue);
+            cube[12] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, yellow, blue);
+            cube[13] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, black, blue);
+            cube[14] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, black, black, blue);
+            // 2 old right blue
+
+            cube[15] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, green, black, black, black);
+            cube[16] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, green, black, yellow, black);
+            cube[17] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, yellow, black);
+            cube[18] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, black, black);
+            // 3 old top orange
+
+            cube[19] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, black, black, black);
+            cube[20] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, red, black, black);
+            cube[21] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, red, yellow, black);
+            cube[22] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, black, yellow, black);
+            // 4 old left green
+
+            cube[23] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, black, black);
+            cube[24] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, yellow, black);
+            // 5 old bottom red
+
+            cube[25] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, yellow, black);
+            // 6 old back yellow
+
+            cube[26] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, black, black);
+        }
+
         private static void GraphicWindow_Update(double deltaTime)
         {
             // NO OpenGL
