@@ -13,7 +13,15 @@ namespace GrafikaSzeminarium
 
         private static GL Gl;
 
-        private static ModelObjectDescriptor cube;
+        private static ModelObjectDescriptor cube1;
+        private static ModelObjectDescriptor cube2;
+        private static ModelObjectDescriptor cube3;
+        private static ModelObjectDescriptor cube4;
+        private static ModelObjectDescriptor cube5;
+        private static ModelObjectDescriptor cube6;
+        private static ModelObjectDescriptor cube7;
+        private static ModelObjectDescriptor cube8;
+        private static ModelObjectDescriptor cube9;
 
         private static CameraDescriptor camera = new CameraDescriptor();
 
@@ -73,15 +81,21 @@ namespace GrafikaSzeminarium
 
         private static void GraphicWindow_Closing()
         {
-            cube.Dispose();
             Gl.DeleteProgram(program);
         }
 
         private static void GraphicWindow_Load()
         {
             Gl = graphicWindow.CreateOpenGL();
+            float[] cyan = { 0.0f, 1.0f, 1.0f, 1.0f }; 
+            float[] yellow = { 1.0f, 0.835f, 0.0f, 1.0f };
+            float[] blue = { 0.0f, 0.274f, 0.678f, 1.0f };
+            float[] green = { 0.0f, 0.608f, 0.282f, 1.0f };
+            float[] red = { 0.717f, 0.070f, 0.203f, 1.0f };
+            float[] orange = { 1.0f, 0.345f, 0.0f, 1.0f };
+            float[] black = { 0.0f, 0.0f, 0.0f, 1.0f };
+            cube2 = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl,cyan,yellow,red, green, orange, black);
 
-            cube = ModelObjectDescriptor.CreateCube(Gl);
 
             Gl.ClearColor(System.Drawing.Color.White);
 
@@ -149,7 +163,7 @@ namespace GrafikaSzeminarium
 
             var modelMatrixCenterCube = Matrix4X4<float>.Identity;
             SetMatrix(modelMatrixCenterCube, ModelMatrixVariableName);
-            DrawModelObject(cube);
+            DrawModelObject(cube2);
 
             Matrix4X4<float> diamondScale = Matrix4X4.CreateScale(0.25f);
             Matrix4X4<float> rotx = Matrix4X4.CreateRotationX((float)Math.PI / 4f);
@@ -158,7 +172,7 @@ namespace GrafikaSzeminarium
             Matrix4X4<float> trans = Matrix4X4.CreateTranslation(1f, 1f, 0f);
             Matrix4X4<float> dimondCubeModelMatrix = diamondScale * rotx * rotz * roty * trans;
             SetMatrix(dimondCubeModelMatrix, ModelMatrixVariableName);
-            DrawModelObject(cube);
+            DrawModelObject(cube2);
 
         }
 
