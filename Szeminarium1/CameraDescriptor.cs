@@ -12,7 +12,7 @@ namespace Szeminarium
         private float yaw = -90.0f;
         private float pitch = 0.0f;
         private float speed = 0.15f;
-        private float sensitivity = 2f; // Mouse sensitivity
+        private float sensitivity = 5f;
 
         public CameraDescriptor() { }
         public Matrix4X4<float> GetViewMatrix()

@@ -1,6 +1,7 @@
 ﻿using Silk.NET.Input;
 using Silk.NET.Maths;
 using Silk.NET.OpenGL;
+using Silk.NET.Vulkan;
 using Silk.NET.Windowing;
 using System.Numerics;
 using Szeminarium;
@@ -16,6 +17,8 @@ namespace GrafikaSzeminarium
         private static ModelObjectDescriptor[] cube = new ModelObjectDescriptor[27];
 
         private static CameraDescriptor camera = new CameraDescriptor();
+
+        private static rubixTurn turn = new rubixTurn();
 
 
         private const string ModelMatrixVariableName = "uModel";
@@ -198,6 +201,13 @@ namespace GrafikaSzeminarium
                 case Key.D:
                     camera.Rotate(1, 0);
                     break;
+                case Key.Space:
+                    turn.rotateLeft();
+                    break;
+                case Key.Backspace:
+                    turn.rotateRight();
+                    break;
+
 
             }
         }
@@ -226,6 +236,8 @@ namespace GrafikaSzeminarium
             for (int i = 0; i < 27; i++)
             {
                 float x = 0, y = 0, z = 0;
+                Matrix4X4<float> roty = Matrix4X4.CreateRotationY(0f);
+
                 if(i < 9)
                 {
                     z = 1.01f;
@@ -252,9 +264,13 @@ namespace GrafikaSzeminarium
                 {
                     y = 1.01f;
                 }
-   
-                Matrix4X4<float> trans = Matrix4X4.CreateTranslation(x, y,z);
-                Matrix4X4<float> rubixCubeModelMatrix = trans;
+
+                if(i%9 >=3 && i%9 <6)
+                {
+                   roty *= Matrix4X4.CreateRotationY(turn.angle);
+                }
+                Matrix4X4<float> trans = Matrix4X4.CreateTranslation(x, y, z);
+                Matrix4X4<float> rubixCubeModelMatrix = trans * roty;
                 SetMatrix(rubixCubeModelMatrix, ModelMatrixVariableName);
                 DrawModelObject(cube[i]);
             }

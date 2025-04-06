@@ -10,6 +10,18 @@ using System.Threading.Tasks;
 
 namespace GrafikaSzeminarium
 {
+    internal class rubixTurn{
+        public float angle = 0f;
+        public void rotateLeft()
+        {
+            angle += (float)Math.PI / 2;
+        }
+        public void rotateRight()
+        {
+            angle -= (float)Math.PI / 2;
+        }
+
+    }
     internal class ModelObjectDescriptor:IDisposable
     {
         private bool disposedValue;
