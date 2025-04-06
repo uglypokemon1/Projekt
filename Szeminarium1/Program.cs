@@ -78,6 +78,12 @@ namespace GrafikaSzeminarium
 
         private static void GraphicWindow_Load()
         {
+            var inputContext = graphicWindow.CreateInput();
+            foreach (var keyboard in inputContext.Keyboards)
+            {
+                keyboard.KeyDown += Keyboard_KeyDown;
+            }
+
             Gl = graphicWindow.CreateOpenGL();
             float[] cyan = { 0.0f, 1.0f, 1.0f, 1.0f };
             float[] yellow = { 1.0f, 0.835f, 0.0f, 1.0f };
@@ -164,6 +170,37 @@ namespace GrafikaSzeminarium
             cube[26] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, yellow, blue);
 
         }
+        private static void Keyboard_KeyDown(IKeyboard keyboard, Key key, int arg3)
+        {
+            switch (key)
+            {
+                case Key.Left:
+                    camera.MoveLeft();
+                    break;
+                case Key.Right:
+                    camera.MoveRight();
+                    break;
+                case Key.Down:
+                    camera.MoveBackward();
+                    break;
+                case Key.Up:
+                    camera.MoveForward();
+                    break;
+                case Key.W:
+                    camera.Rotate(0, -1);
+                    break;
+                case Key.S:
+                    camera.Rotate(0, 1);
+                    break;
+                case Key.A:
+                    camera.Rotate(-1, 0);
+                    break;
+                case Key.D:
+                    camera.Rotate(1, 0);
+                    break;
+
+            }
+        }
 
         private static void GraphicWindow_Update(double deltaTime)
         {
@@ -178,7 +215,7 @@ namespace GrafikaSzeminarium
 
             Gl.UseProgram(program);
 
-            var viewMatrix = Matrix4X4.CreateLookAt(camera.Position, camera.Target, camera.UpVector);
+            var viewMatrix = camera.GetViewMatrix();
             SetMatrix(viewMatrix, ViewMatrixVariableName);
 
             var projectionMatrix = Matrix4X4.CreatePerspectiveFieldOfView<float>((float)(Math.PI / 2), 1024f / 768f, 0.1f, 100f);
