@@ -135,45 +135,34 @@ namespace GrafikaSzeminarium
 
         private static void CreateCubes(float[] cyan, float[] yellow, float[] blue, float[] green, float[] red, float[] orange, float[] black)
         {
-            cube[0] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, black, black, black);
-            cube[1] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, red, black, black);
-            cube[2] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, red, black, blue);
-            cube[3] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, green, red, black, black);
-            cube[4] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, green, black, black, black);
-            cube[5] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, cyan, green, black, black, black);
-            cube[6] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, cyan, black, black, black, black);
-            cube[7] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, cyan, black, black, black, blue);
-            cube[8] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, black, black, blue);
-            // 1 oldal front cyan szinu
-
-            cube[9] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, black, blue);
-            cube[10] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, yellow, blue);
-            cube[11] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, black, yellow, blue);
-            cube[12] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, yellow, blue);
-            cube[13] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, black, blue);
+            cube[0] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, cyan, green, black, black, black);
+            cube[1] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, cyan, black, black, black, black);
+            cube[2] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, cyan, black, black, black, blue);
+            cube[3] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, green, black, black, black);
+            cube[4] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, black, black, black);
+            cube[5] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, black, black, blue);
+            cube[6] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, green, red, black, black);
+            cube[7] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, red, black, black);
+            cube[8] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, cyan, black, red, black, blue);
+            cube[9] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, green, black, black, black);
+            cube[10] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, black, black);
+            cube[11] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, black, blue);
+            cube[12] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, black, black, black);
+            cube[13] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, black, black, black);
             cube[14] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, black, black, blue);
-            // 2 old right blue
+            cube[15] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, red, black, black);
+            cube[16] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, black, black);
+            cube[17] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, black, blue);
+            cube[18] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, green, black, yellow, black);
+            cube[19] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, yellow, black);
+            cube[20] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, yellow, blue);
+            cube[21] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, black, yellow, black);
+            cube[22] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, black, yellow, black);
+            cube[23] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, black, yellow, blue);
+            cube[24] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, red, yellow, black);
+            cube[25] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, yellow, black);
+            cube[26] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, yellow, blue);
 
-            cube[15] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, green, black, black, black);
-            cube[16] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, green, black, yellow, black);
-            cube[17] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, yellow, black);
-            cube[18] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, black, black);
-            // 3 old top orange
-
-            cube[19] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, black, black, black);
-            cube[20] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, red, black, black);
-            cube[21] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, red, yellow, black);
-            cube[22] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, green, black, yellow, black);
-            // 4 old left green
-
-            cube[23] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, black, black);
-            cube[24] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, black, black, black, red, yellow, black);
-            // 5 old bottom red
-
-            cube[25] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, yellow, black);
-            // 6 old back yellow
-
-            cube[26] = ModelObjectDescriptor.CreateCubeWithFaceColors(Gl, orange, black, black, black, black, black);
         }
 
         private static void GraphicWindow_Update(double deltaTime)
@@ -196,18 +185,42 @@ namespace GrafikaSzeminarium
             SetMatrix(projectionMatrix, ProjectionMatrixVariableName);
 
 
-            var modelMatrixCenterCube = Matrix4X4<float>.Identity;
-            SetMatrix(modelMatrixCenterCube, ModelMatrixVariableName);
-            DrawModelObject(cube2);
 
-            Matrix4X4<float> diamondScale = Matrix4X4.CreateScale(0.25f);
-            Matrix4X4<float> rotx = Matrix4X4.CreateRotationX((float)Math.PI / 4f);
-            Matrix4X4<float> rotz = Matrix4X4.CreateRotationZ((float)Math.PI / 4f);
-            Matrix4X4<float> roty = Matrix4X4.CreateRotationY((float)Math.PI / 2f);
-            Matrix4X4<float> trans = Matrix4X4.CreateTranslation(1f, 1f, 0f);
-            Matrix4X4<float> dimondCubeModelMatrix = diamondScale * rotx * rotz * roty * trans;
-            SetMatrix(dimondCubeModelMatrix, ModelMatrixVariableName);
-            DrawModelObject(cube2);
+            for (int i = 0; i < 27; i++)
+            {
+                float x = 0, y = 0, z = 0;
+                if(i < 9)
+                {
+                    z = 1.01f;
+                }
+                else if(i >= 18)
+                {
+                    z = -1.01f;
+                }
+                
+                if(i%3 == 0)
+                {
+                    x = -1.01f;
+                }
+                else if(i%3 == 2)
+                {
+                    x = 1.01f;
+                }
+
+                if(i%9 >= 6)
+                {
+                    y = -1.01f;
+                }
+                else if(i%9 <= 2)
+                {
+                    y = 1.01f;
+                }
+   
+                Matrix4X4<float> trans = Matrix4X4.CreateTranslation(x, y,z);
+                Matrix4X4<float> rubixCubeModelMatrix = trans;
+                SetMatrix(rubixCubeModelMatrix, ModelMatrixVariableName);
+                DrawModelObject(cube[i]);
+            }
 
         }
 
